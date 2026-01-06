@@ -1,0 +1,243 @@
+/* Theme variables moved to `src/styles/theme.css` */
+
+body {
+  margin: 0;
+  font-family: Inter, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.card {
+  background: var(--panel);
+  border-radius: 14px;
+  padding: 20px;
+}
+
+/* Layout */
+.app-grid {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 20px;
+  height: 100vh;
+  padding: 20px;
+}
+
+@media (max-width: 800px) {
+  .app-grid {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 12px;
+  }
+  aside.card {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  overflow: auto;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.stat-card h2 {
+  margin: 8px 0 0;
+  font-size: 1.4rem;
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.main-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 1000px) {
+  .main-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Revenue chart */
+.revenue-chart .bars {
+  display: flex;
+  align-items: end;
+  gap: 10px;
+  height: 140px;
+  padding: 12px 0;
+}
+
+.bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 40px;
+}
+
+.bar {
+  width: 100%;
+  border-radius: 6px;
+  background: var(--accent);
+  transition: opacity 0.2s;
+}
+
+.bar.loss {
+  background: #9aa0b4;
+}
+
+/* Orders table */
+.orders-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.orders-table th,
+.orders-table td {
+  padding: 8px 10px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+.orders-table tr:hover {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.status {
+  padding: 4px 8px;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  display: inline-block;
+}
+
+.status.delivered {
+  background: var(--success);
+  color: #04240b;
+}
+
+.status.pending {
+  background: #f0ad4e;
+  color: #3a2500;
+}
+
+.status.canceled {
+  background: var(--danger);
+  color: white;
+}
+
+/* Sidebar */
+aside.card.sidebar {
+  width: 260px;
+  height: 100vh;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: linear-gradient(180deg, var(--panel), var(--panel-2));
+}
+.brand {
+  font-weight: 700;
+  letter-spacing: 1px;
+  color: var(--accent);
+  font-size: 1.1rem;
+}
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+.nav p {
+  margin: 0;
+  color: var(--muted-2);
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.nav p:hover {
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text);
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  gap: 12px;
+}
+.header .search {
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--glass);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  color: var(--text);
+}
+.header .avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0b1a16;
+  font-weight: 700;
+}
+
+/* Stat Card */
+.stat-card {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 12px;
+}
+.stat-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.stat-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  box-shadow: 0 6px 16px var(--card-glow);
+}
+
+/* Revenue Chart tweaks */
+.revenue-chart {
+  padding: 12px;
+}
+.bar {
+  background: var(--accent-2);
+}
+.bar.profit {
+  background: var(--accent-2);
+}
+.bar.loss {
+  background: var(--muted-2);
+}
+
+/* Orders */
+.orders-table {
+  padding: 12px;
+}
+.orders-table table th {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+.orders-table table td {
+  color: var(--text);
+}
