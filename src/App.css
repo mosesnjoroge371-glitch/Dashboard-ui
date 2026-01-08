@@ -1,12 +1,64 @@
-/* Theme variables moved to `src/styles/theme.css` */
+/* Consolidated theme and base styles */
 
-body {
-  margin: 0;
-  font-family: Inter, sans-serif;
-  background: var(--bg);
-  color: var(--text);
+:root {
+  --bg: #051622; /* deep teal navy */
+  --bg-accent: linear-gradient(
+    180deg,
+    rgba(3, 20, 20, 0.8),
+    rgba(6, 28, 34, 0.95)
+  );
+  --panel: #0b2a2e; /* dark teal */
+  --panel-2: #0f3a3f;
+  --accent: #ff7a59; /* warm coral */
+  --accent-2: #3dd0c2; /* mint */
+  --text: #e6f7f5;
+  --muted: rgba(230, 247, 245, 0.65);
+  --muted-2: rgba(230, 247, 245, 0.35);
+  --success: #2ecc71;
+  --danger: #ff6b6b;
+  --glass: rgba(255, 255, 255, 0.03);
+  --card-glow: rgba(61, 208, 194, 0.06);
+  --radius: 12px;
+  --transition: 180ms ease;
+  --font-sans: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
 
+/* Global base rules */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  background: var(--bg-accent), var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 1.5;
+  font-weight: 400;
+}
+
+a {
+  color: var(--accent-2);
+  font-weight: 500;
+}
+a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--panel);
+  cursor: pointer;
+  transition: border-color var(--transition);
+}
+
+/* Card base */
 .card {
   background: var(--panel);
   border-radius: 14px;
