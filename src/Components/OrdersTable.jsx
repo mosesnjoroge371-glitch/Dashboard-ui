@@ -27,7 +27,7 @@ const OrdersTable = ({ orders = [] }) => {
             <tr key={i}>
               <td>{o.product}</td>
               <td>#{o.id || 11232}</td>
-              <td>{o.date || "Jun 29, 2022"}</td>
+              <td>{o.date || "Jun 29, 2025"}</td>
               <td>{o.customer || "Afaq Karim"}</td>
               <td>
                 <span className={`status ${statusClass(o.status)}`}>
