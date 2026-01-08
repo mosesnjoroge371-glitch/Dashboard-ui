@@ -53,3 +53,17 @@ button {
   border-radius: var(--radius);
   box-shadow: 0 6px 18px var(--card-glow);
 }
+
+/* Revenue chart small layout helpers */
+.revenue-chart {
+  padding: 1rem;
+}
+.revenue-chart h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  color: var(--muted);
+}
+.revenue-chart .chart-canvas {
+  width: 100%;
+  height: 240px;
+}
