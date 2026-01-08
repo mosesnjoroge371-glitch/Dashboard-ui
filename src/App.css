@@ -208,16 +208,51 @@ aside.card.sidebar {
   gap: 10px;
   margin-top: 8px;
 }
-.nav p {
+.nav .nav-item {
+  /* reset button defaults for a clean nav item */
   margin: 0;
-  color: var(--muted-2);
-  padding: 8px 12px;
+  color: var(--muted);
+  padding: 8px 14px;
   border-radius: 8px;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  text-align: left;
+  width: 100%;
+  font: inherit;
+  position: relative;
+  transition: color var(--transition), background var(--transition),
+    transform var(--transition), box-shadow var(--transition);
 }
-.nav p:hover {
-  background: rgba(255, 255, 255, 0.02);
+.nav .nav-item::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 8px;
+  bottom: 8px;
+  width: 0;
+  border-radius: 6px;
+  background: linear-gradient(180deg, var(--accent-2), var(--accent));
+  transition: width var(--transition), opacity var(--transition);
+  opacity: 0;
+}
+.nav .nav-item:hover {
+  background: rgba(255, 255, 255, 0.03);
   color: var(--text);
+  transform: translateX(6px);
+  box-shadow: 0 8px 22px rgba(61, 208, 194, 0.06);
+}
+.nav .nav-item:hover::before {
+  width: 4px;
+  opacity: 1;
+}
+.nav .nav-item:focus-visible {
+  outline: 2px solid rgba(61, 208, 194, 0.12);
+  outline-offset: 2px;
+}
+.nav .nav-item.active {
+  color: var(--text);
+  background: rgba(61, 208, 194, 0.03);
 }
 
 /* Header */
